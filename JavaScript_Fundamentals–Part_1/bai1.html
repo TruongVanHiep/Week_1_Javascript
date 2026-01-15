@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Mark</h3>
+    <input type="text" id="Mmass">
+    <input type="text" id="Mheight">
+
+    <h3>John</h3>
+    <input type="text" id="Jmass">
+    <input type="text" id="Jheight">
+    <button class="button" onclick="calculate()">Calculate</button>
+
+    <script>
+        function calculate(){
+
+       
+        let Mmass = parseFloat(document.getElementById("Mmass").value);
+        let Mheight = parseFloat(document.getElementById("Mheight").value);
+        
+        let Jmass = parseFloat(document.getElementById("Jmass").value);
+        let Jheight = parseFloat(document.getElementById("Jmass").value);
+
+        let MBMI = Mmass / (Math.pow(Mheight,2));
+        let JBMI = Jmass / (Math.pow(Jheight, 2));
+
+        console.log(MBMI);
+        console.log(JBMI);
+
+        if (MBMI > JBMI) { 
+            console.log("Mark has a higher BMI."); 
+        } else if (JBMI > MBMI) { 
+            console.log("John has a higher BMI."); 
+        } else {
+             console.log("Both have the same BMI."); 
+            }
+        }
+    </script>
+</body>
+</html>

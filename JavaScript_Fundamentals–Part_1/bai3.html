@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Dolphins</h3>
+    <input type="text" id="d1">
+    <input type="text" id="d2">
+    <input type="text" id="d3">
+
+    <h3>Koalas</h3>
+    <input type="text" id="k1">
+    <input type="text" id="k2">
+    <input type="text" id="k3">
+    <button class="btn" onclick="calculate()">Calculate</button>
+
+    <script>
+        function calculate() {
+            let Dolphin_1 = parseFloat(document.getElementById("d1").value);
+            let Dolphin_2 = parseFloat(document.getElementById("d2").value);
+            let Dolphin_3 = parseFloat(document.getElementById("d3").value);
+
+            let Koalas_1 = parseFloat(document.getElementById("k1").value);
+            let Koalas_2 = parseFloat(document.getElementById("k2").value);
+            let Koalas_3 = parseFloat(document.getElementById("k3").value);
+
+            let avg_Dolphin = (Dolphin_1 + Dolphin_2 + Dolphin_3) / 3;
+            let avg_Koalas = (Koalas_1 + Koalas_2 + Koalas_3) / 3;
+
+            if (avg_Dolphin >= 100 && avg_Dolphin > avg_Koalas) {
+                console.log("Dolphins is win!");
+            } else if (avg_Koalas >= 100 && avg_Koalas > avg_Dolphin) {
+                console.log("Koalas is win!");
+            } else if (avg_Dolphin === avg_Koalas && avg_Dolphin >= 100 && avg_Koalas >= 100) {
+                console.log("A draw!");
+            } else {
+                console.log("No team wins!");
+            }
+
+        }
+    </script>
+</body>
+
+</html>
