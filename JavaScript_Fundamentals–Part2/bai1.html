@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Dolphins</h3>
+    <input type="text" id="d1">
+    <input type="text" id="d2">
+    <input type="text" id="d3">
+
+    <h3>Koalas</h3>
+    <input type="text" id="k1">
+    <input type="text" id="k2">
+    <input type="text" id="k3">
+    <button class="btn" onclick="calculate()">Calculate</button>
+
+    <script>
+
+        let calcAverage = (a, b, c) => {
+            return (a + b + c) / 3;
+        }
+
+        function calculate() {
+            let Dolphin_1 = parseFloat(document.getElementById("d1").value);
+            let Dolphin_2 = parseFloat(document.getElementById("d2").value);
+            let Dolphin_3 = parseFloat(document.getElementById("d3").value);
+
+            let Koalas_1 = parseFloat(document.getElementById("k1").value);
+            let Koalas_2 = parseFloat(document.getElementById("k2").value);
+            let Koalas_3 = parseFloat(document.getElementById("k3").value);
+
+            let avgDolphins = calcAverage(Dolphin_1, Dolphin_2, Dolphin_3);
+            let avgKoalas = calcAverage(Koalas_1, Koalas_2, Koalas_3);
+            
+            checkWinner(avgDolphins, avgKoalas);
+        }
+
+        function checkWinner(avgDolphins, avgKoalas) {
+            if (avgDolphins >= avgKoalas * 2) {
+                console.log(`Dolphins win (${avgDolphins} vs. ${avgKoalas})`);
+            } else if (avgKoalas >= avgDolphins * 2) {
+                console.log(`Koalas win (${avgKoalas} vs. ${avgDolphins})`);
+            }
+        }
+
+    </script>
+</body>
+
+</html>

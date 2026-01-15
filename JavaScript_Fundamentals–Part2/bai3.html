@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Dolphins</h3>
+    <input type="text" id="d1">
+    <input type="text" id="d2">
+    <input type="text" id="d3">
+
+    <h3>Koalas</h3>
+    <input type="text" id="k1">
+    <input type="text" id="k2">
+    <input type="text" id="k3">
+    <button class="btn" onclick="calculate()">Calculate</button>
+
+    <script>
+    function calculate() {
+        const mark = {
+            fullName: "Mark Miller",
+            mass: parseFloat(document.getElementById("Mmass").value),
+            height: parseFloat(document.getElementById("Mheight").value),
+            calcBMI: function () {
+                this.bmi = this.mass / (this.height * this.height);
+                return this.bmi;
+            }
+        };
+        const john = {
+            fullName: "John Smith",
+            mass: parseFloat(document.getElementById("Jmass").value),
+            height: parseFloat(document.getElementById("Jheight").value),
+            calcBMI: function () {
+                this.bmi = this.mass / (this.height * this.height);
+                return this.bmi;
+            }
+        };
+
+        mark.calcBMI();
+        john.calcBMI();
+
+        console.log(`Mark BMI: ${mark.bmi}`);
+        console.log(`John BMI: ${john.bmi}`);
+
+        if (mark.bmi > john.bmi) {
+            console.log(`${mark.fullName}'s BMI (${mark.bmi}) is higher than ${john.fullName}'s (${john.bmi})!`);
+        } else if (john.bmi > mark.bmi) {
+            console.log(`${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s (${mark.bmi})!`);
+        } else {
+            console.log("Both have the same BMI!");
+        }
+    }
+</script>
+
+</body>
+
+</html>
