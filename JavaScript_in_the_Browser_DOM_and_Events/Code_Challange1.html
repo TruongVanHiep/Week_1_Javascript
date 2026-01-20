@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body style="background:#222; color:white;">
+
+  <p class="message">Start guessing...</p>
+  <p>Score: <span class="score">20</span></p>
+
+  <input class="guess" type="number">
+  <div class="number">?</div>
+
+  <br><br>
+  <button class="again">Again!</button>
+
+  <script>
+    let score = 20;
+    let secretNumber = Math.trunc(Math.random()*20)+1;
+
+    document.querySelector('.again').addEventListener('click', function() {
+      score = 20;
+      secretNumber = Math.trunc(Math.random()*20)+1;
+
+      document.querySelector('.message').textContent = 'Start guessing...';
+      document.querySelector('.score').textContent = score;
+      document.querySelector('.guess').value = '';
+      document.querySelector('.number').textContent = '?';
+
+      document.body.style.backgroundColor = '#222';
+    });
+  </script>
+
+</body>
+</html>
